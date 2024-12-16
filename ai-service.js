@@ -54,10 +54,6 @@ class AIService {
     async toMarkdown(rq, aiOptions = null, timeout = null, ct = null) {
         return this._client.toMarkdown(this._apiToken, new ToMarkdownRequest(rq, aiOptions || this._defaultAIOptions), timeout, ct);
     }
-
-    async to(html, aiOptions = null, timeout = null, ct = null) {
-        return Serializer.toObject(await this._client.toJSON(this._apiToken, new ToJSONRequest({ html, responseFormat: Serializer.toResponseFormat() }, aiOptions || this._defaultAIOptions), timeout, ct));
-    }
 }
 
 module.exports = AIService;
