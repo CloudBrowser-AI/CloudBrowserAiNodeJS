@@ -4,5 +4,4 @@ const SupportedBrowser = {
     CHROMIUM: 2,
     CHROME_HEADLESS_SHELL: 3
 };
-
-module.exports = SupportedBrowser
+export { SupportedBrowser };

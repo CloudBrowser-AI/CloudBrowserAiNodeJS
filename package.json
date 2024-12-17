@@ -1,12 +1,7 @@
 {
-  "name": "cloud-browser-connector",
+  "name": "cloudbrowser.ai",
   "version": "0.0.1",
-  "description": "Client for connection with CloudBrowser.",
+  "description": "Client for connection with CloudBrowser.AI.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {}
+  "type": "module"
 }

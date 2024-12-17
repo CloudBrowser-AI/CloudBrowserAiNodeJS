@@ -5,4 +5,4 @@ class StoptRemoteDesktopResponse {
     }
 }
 
-module.exports = StoptRemoteDesktopResponse;
+export { StoptRemoteDesktopResponse };

@@ -1,10 +1,6 @@
 class AIOptions {
-    constructor() {
-        this.openAIConfiguration = new OpenAIConfiguration();
-    }
-
-    copyFrom(original) {
-        this.openAIConfiguration = original.openAIConfiguration;
+    constructor(original = null) {
+        this.openAIConfiguration = original?.openAIConfiguration ?? new OpenAIConfiguration();
     }
 }
 
@@ -15,4 +11,4 @@ class OpenAIConfiguration {
     }
 }
 
-module.exports = { AIOptions, OpenAIConfiguration };
+export { AIOptions, OpenAIConfiguration };

@@ -1,4 +1,4 @@
-const AIOptions = require('./ai/types/ai-options');
+import AIOptions from './ai/types/ai-options.js';
 
 class ToMarkdownRequest {
     constructor() {
@@ -13,4 +13,4 @@ class ToMarkdownRequestI extends AIOptions {
     }
 }
 
-module.exports = { ToMarkdownRequest };
+export { ToMarkdownRequest, ToMarkdownRequestI };

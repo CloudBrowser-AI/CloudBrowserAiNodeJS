@@ -1,4 +1,4 @@
-const AIOptions = require('./ai/types/ai-options');
+import AIOptions from './ai/types/ai-options.js';
 
 class OptimizeRequest {
     constructor() {
@@ -17,4 +17,4 @@ class OptimizeRequestI extends AIOptions {
     }
 }
 
-module.exports = { OptimizeRequest };
+export { OptimizeRequest, OptimizeRequestI };

@@ -1,4 +1,4 @@
-const AIOptions = require('./ai/types/ai-options');
+import AIOptions from './ai/types/ai-options.js';
 
 class QueryRequest {
     constructor() {
@@ -17,4 +17,4 @@ class QueryRequestI extends AIOptions {
     }
 }
 
-module.exports = { QueryRequest };
+export { QueryRequest, QueryRequestI };

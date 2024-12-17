@@ -1,4 +1,4 @@
-const SessionApiClient = require('./SessionApiClient');
+import SessionApiClient from './session/client/session-api-client.js';
 
 class SessionService {
     constructor(apiToken) {
@@ -22,4 +22,4 @@ class SessionService {
     }
 }
 
-module.exports = SessionService;
+export default SessionService;

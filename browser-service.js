@@ -1,7 +1,4 @@
-const BrowserApiClient = require('./browser/client/browser-api-client');
-const CloseRequest = require('./browser/types/request/close-request');
-const StartRemoteDesktopRequest = require('./browser/types/request/start-remote-desktop-request');
-const StopRemoteDesktopRequest = require('./browser/types/request/stop-remote-desktop-request');
+import BrowserApiClient from './browser/client/browser-api-client.js';
 
 class BrowserService {
     constructor(apiToken) {
@@ -38,4 +35,4 @@ class BrowserService {
     }
 }
 
-module.exports = BrowserService;
+export default BrowserService;

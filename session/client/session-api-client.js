@@ -1,8 +1,8 @@
-const ClientBase = require('../../shared/clientBase');
+import ClientBase from'../../shared/client-base.js';
 
 class AIApiClient extends ClientBase {
     constructor() {
-        super(new URL('https://production.cloudbrowser.ai'));
+        super(new URL('https://production.cloudbrowser.ai/api/v1/session/'));
     }
 
     async query(apiKey, rq, timeout = null, ct = null) {
@@ -37,3 +37,5 @@ class AIApiClient extends ClientBase {
         return this.post(apiKey, 'toMarkdown', rq, timeout, ct);
     }
 }
+
+export default AIApiClient;

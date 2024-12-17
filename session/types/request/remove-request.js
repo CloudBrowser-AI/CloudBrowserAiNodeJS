@@ -3,3 +3,5 @@ class RemoveRequest {
         this.label = label;
     }
 }
+
+export { RemoveRequest };

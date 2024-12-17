@@ -5,4 +5,4 @@ class SimpleResponse {
     }
 }
 
-module.exports = SimpleResponse;
+export { SimpleResponse };

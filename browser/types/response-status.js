@@ -9,4 +9,4 @@ const ResponseStatus = {
     LABEL_IN_USE: 406
 };
 
-module.exports = ResponseStatus;
+export { ResponseStatus };

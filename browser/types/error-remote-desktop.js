@@ -4,4 +4,4 @@ const ErrorRemoteDesktop = {
     ADDRESS_ERROR: 404
 };
 
-module.exports = ErrorRemoteDesktop;
+export { ErrorRemoteDesktop };

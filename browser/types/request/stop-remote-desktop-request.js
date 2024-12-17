@@ -4,4 +4,4 @@ class StopRemoteDesktopRequest {
     }
 }
 
-module.exports = StopRemoteDesktopRequest;
+export { StopRemoteDesktopRequest };

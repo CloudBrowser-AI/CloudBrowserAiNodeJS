@@ -1,4 +1,4 @@
-const AIOptions = require('./ai/types/ai-options');
+import AIOptions from './ai/types/ai-options.js';
 
 class ToJSONRequest {
     constructor() {
@@ -15,4 +15,4 @@ class ToJSONRequestI extends AIOptions {
     }
 }
 
-module.exports = { ToJSONRequest };
+export { ToJSONRequest, ToJSONRequestI };

@@ -13,4 +13,4 @@ class AIResponse {
     }
 }
 
-module.exports = { AIError, AIResponse };
+export { AIError, AIResponse };

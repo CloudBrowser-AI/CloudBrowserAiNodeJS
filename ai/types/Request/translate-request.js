@@ -1,4 +1,4 @@
-const AIOptions = require('./ai/types/ai-options');
+import AIOptions from './ai/types/ai-options.js';
 
 class TranslateRequestT {
     constructor() {
@@ -17,4 +17,4 @@ class TranslateRequestI extends AIOptions {
     }
 }
 
-module.exports = { TranslateRequest };
+export { TranslateRequestT, TranslateRequestI };

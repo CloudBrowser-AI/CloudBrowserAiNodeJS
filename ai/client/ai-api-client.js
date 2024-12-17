@@ -1,4 +1,4 @@
-const ClientBase = require('../../shared/client-base');
+import ClientBase from '../../shared/client-base.js';
 
 class AIApiClient extends ClientBase {
     constructor() {
@@ -37,3 +37,5 @@ class AIApiClient extends ClientBase {
         return this.post(apiKey, 'toMarkdown', rq, timeout, ct);
     }
 }
+
+export default AIApiClient;

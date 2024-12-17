@@ -3,4 +3,4 @@ const ErrorSession = {
     AuthorizationError: 401
 };
 
-module.exports = ErrorSession;
+export { ErrorSession };

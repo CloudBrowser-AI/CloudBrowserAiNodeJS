@@ -1,4 +1,4 @@
-const AIOptions = require('./ai/types/ai-options');
+import AIOptions from './ai/types/ai-options.js';
 
 class ToCSVRequest {
     constructor() {
@@ -17,4 +17,4 @@ class ToCSVRequestI extends AIOptions {
     }
 }
 
-module.exports = { ToCSVRequest };
+export { ToCSVRequest, ToCSVRequestI };

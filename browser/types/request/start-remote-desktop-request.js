@@ -4,4 +4,4 @@ class StartRemoteDesktopRequest {
     }
 }
 
-module.exports = StartRemoteDesktopRequest;
+export { StartRemoteDesktopRequest };

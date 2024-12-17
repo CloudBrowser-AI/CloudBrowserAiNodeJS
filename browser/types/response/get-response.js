@@ -14,4 +14,4 @@ class Session {
     }
 }
 
-module.exports = { GetResponse, Session };
+export { GetResponse, Session };

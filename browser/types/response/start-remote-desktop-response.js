@@ -6,4 +6,4 @@ class StartRemoteDesktopResponse {
     }
 }
 
-module.exports = StartRemoteDesktopResponse;
+export { StartRemoteDesktopResponse };

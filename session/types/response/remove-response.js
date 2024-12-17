@@ -5,4 +5,4 @@ class RemoveResponse {
     }
 }
 
-module.exports = RemoveResponse;
+export { RemoveResponse };

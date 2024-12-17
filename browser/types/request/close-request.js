@@ -4,4 +4,4 @@ class CloseRequest {
     }
 }
 
-module.exports = CloseRequest;
+export { CloseRequest };

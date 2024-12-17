@@ -13,5 +13,4 @@ class BrowserOptions {
         this.recoverSession = false;
     }
 }
-
-module.exports = BrowserOptions;
+export { BrowserOptions };

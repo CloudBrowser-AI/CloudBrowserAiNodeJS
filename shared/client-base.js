@@ -1,4 +1,9 @@
-const fetch = require('node-fetch');
+let fetch;
+try {
+    fetch = global.fetch || require('node-fetch');
+} catch (e) {
+    console.error('Fetch is not available and node-fetch could not be loaded:', e);
+}
 
 class ClientBase {
     constructor(baseAddress) {
@@ -67,3 +72,5 @@ class ClientBase {
         }
     }
 }
+
+export default ClientBase;

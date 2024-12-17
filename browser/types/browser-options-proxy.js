@@ -6,5 +6,4 @@ class BrowserOptionsProxy {
         this.password = null;
     }
 }
-
-module.exports = BrowserOptionsProxy;
+export { BrowserOptionsProxy };

@@ -5,4 +5,4 @@ class OpenResponse {
     }
 }
 
-module.exports = OpenResponse;
+export { OpenResponse };
