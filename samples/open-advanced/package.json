@@ -1,0 +1,15 @@
+{
+  "name": "cloudbrowserai-example-open",
+  "version": "0.0.1",
+  "description": "Opening a puppetter with CloudBrowswerAI",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "cloudbrowserai": "file:../../lib/",
+    "puppeteer": "^23.11.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}
