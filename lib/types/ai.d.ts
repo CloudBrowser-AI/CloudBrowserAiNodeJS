@@ -2,7 +2,7 @@ import AIError from "../ai/types/ai-error.js";
 
 declare interface OpenAIConfiguration {
     apiKey: string;
-    model: string;
+    model?: string | null;
 }
 
 declare interface AIOptions {
@@ -18,6 +18,13 @@ declare interface QueryRequest {
 declare interface OptimizeRequest {
     text?: string | null;
     instruction?: string | null;
+    responseFormat?: string | null;
+}
+
+declare interface DescribeRequest {
+    question?: string | null;
+    base64Image?: string | null;
+    imageUrl?: string | null;
     responseFormat?: string | null;
 }
 
@@ -122,5 +129,6 @@ export {
     ToMarkdownRequest,
     TranslateRequest,
     AIResponse,
+    DescribeRequest,
     AIError,
 };

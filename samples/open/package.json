@@ -1,5 +1,5 @@
 {
-  "name": "cloudbrowserai-example-open",
+  "name": "cloudbrowserai-example",
   "version": "0.0.1",
   "description": "Opening a puppetter with CloudBrowswerAI",
   "main": "index.js",
