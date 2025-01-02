@@ -1,5 +1,9 @@
 import puppeteer from "puppeteer";
-import { BrowserService, SupportedBrowser } from "cloudbrowserai";
+import {
+    BrowserService,
+    ResponseStatus,
+    SupportedBrowser,
+} from "cloudbrowserai";
 
 const apiToken = "YOUR CLOUDBROWSER.AI TOKEN";
 
@@ -23,26 +27,28 @@ async function main() {
     function delay(time: number) {
         return new Promise((resolve) => setTimeout(resolve, time));
     }
-    if (rp.address == undefined) {
+
+    if (rp.status !== ResponseStatus.SUCCESS || rp.address == null) {
         console.log("Error: " + (rp?.status ?? ""));
-    } else {
-        const browser = await puppeteer.connect({
-            browserWSEndpoint: rp.address,
-            defaultViewport: null,
-            slowMo: 0,
-        });
-
-        const pages = await browser.pages();
-        const page = pages[0];
-        await page.goto("https://cloudbrowser.ai");
-
-        console.log("Waiting 10 seconds");
-
-        await delay(10000);
-
-        await browser.close();
-        console.log("Browser closed");
+        return;
     }
+
+    const browser = await puppeteer.connect({
+        browserWSEndpoint: rp.address,
+        defaultViewport: null,
+        slowMo: 0,
+    });
+
+    const pages = await browser.pages();
+    const page = pages[0];
+    await page.goto("https://cloudbrowser.ai");
+
+    console.log("Waiting 10 seconds");
+
+    await delay(10000);
+
+    await browser.close();
+    console.log("Browser closed");
 }
 
 main().catch(console.error);

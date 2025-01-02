@@ -3,9 +3,9 @@ import ErrorRemoteDesktop from "../browser/types/error-remote-desktop.js";
 import ResponseStatus from "../browser/types/response-status.js";
 
 declare interface BrowserData {
-    startedOn?: Date | null;
-    label?: string | null;
-    address?: string | null;
+    startedOn: Date;
+    label: string;
+    address: string;
     vncPass?: string | null;
 }
 

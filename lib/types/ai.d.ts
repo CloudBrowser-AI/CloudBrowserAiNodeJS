@@ -11,7 +11,7 @@ declare interface AIOptions {
 
 declare interface QueryRequest {
     html?: string | null;
-    promt?: string | null;
+    prompt?: string | null;
     responseFormat?: string | null;
 }
 

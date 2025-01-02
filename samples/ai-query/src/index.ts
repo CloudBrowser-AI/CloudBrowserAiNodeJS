@@ -5,38 +5,39 @@ const cloudBrowserToken = "YOUR CLOUDBROWSER.AI TOKEN";
 const openAiToken = "YOUR OPEN AI TOKEN";
 
 async function main() {
-    const src = await getImageAddress("http://www.cloudbrowser.ai", "img");
+    const html = await getHTML("http://www.cloudbrowser.ai");
 
-    if (!src) return;
+    if (!html) return;
 
     const ai = new AIService(cloudBrowserToken, {
         openAIConfiguration: { apiKey: openAiToken },
     });
 
-    const rpai = await ai.describe({
-        // base64Image: downloadImage(src), // You can send bytes instead of the image URL
-        imageUrl: src,
-        question: "Is the image red?",
-        responseFormat: JSON.stringify({
-            response: "bool",
-            required: ["response"],
-        }),
+    // Response format can be created manually but it is easier to use a type
+    // await ai.query({
+    //     html: html,
+    //     prompt: "Give me the lowest price",
+    //     responseFormat: JSON.stringify({ response: "number", required: ["response"] })
+    // });
+
+    const rpai = await ai.query({
+        html: html,
+        prompt: "Give me the lowest price",
     });
 
     console.log("The lowest price is:", rpai);
 }
 
-async function getImageAddress(
-    address: string,
-    selector: string
-): Promise<string | null> {
-    const svc = new BrowserService(cloudBrowserToken);
+async function getHTML(address: string): Promise<string | null> {
+    const browserService = new BrowserService(cloudBrowserToken);
 
-    const rp = await svc.open();
+    const rp = await browserService.open();
+
     if (rp.status !== ResponseStatus.SUCCESS || rp.address == null) {
         console.log("Error requesting browser:", rp.status);
         return null;
     }
+
     console.log("Browser requested");
 
     const browser = await puppeteer.connect({
@@ -49,18 +50,10 @@ async function getImageAddress(
     const page = (await browser.pages())[0];
 
     await page.goto(address);
-
-    const element = await page.$(selector);
-    if (!element) return null;
-
-    const src = await page.evaluate(
-        (el, attr) => el.getAttribute(attr),
-        element,
-        "src"
-    );
+    const content = await page.content();
 
     await browser.close();
-    return src;
+    return content;
 }
 
 main().catch(console.error);
