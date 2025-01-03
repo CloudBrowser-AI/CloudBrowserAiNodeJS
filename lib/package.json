@@ -1,5 +1,5 @@
 {
-  "name": "cloudbrowserai",
+  "name": "cloudbrowser.ai",
   "version": "0.0.7",
   "description": "Client for connection with CloudBrowser.AI.",
   "main": "index.js",
