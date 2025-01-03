@@ -20,13 +20,12 @@ jobs:
         node-version: '18'
         registry-url: 'https://registry.npmjs.org/'
 
-    - name: Change directory to ./lib
-      run: cd ./lib
-
     - name: Install dependencies
+      working-directory: ./lib
       run: npm install
 
     - name: Publish package
+      working-directory: ./lib
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       run: npm publish
