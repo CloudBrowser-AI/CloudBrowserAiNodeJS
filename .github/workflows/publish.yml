@@ -20,6 +20,9 @@ jobs:
         node-version: '18'
         registry-url: 'https://registry.npmjs.org/'
 
+    - name: Change directory to ./lib
+      run: cd ./lib
+
     - name: Install dependencies
       run: npm install
 

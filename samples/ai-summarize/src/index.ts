@@ -21,7 +21,7 @@ async function main() {
         }),
     });
 
-    console.log(rp.response);
+    console.log(JSON.parse(rp.response).response);
 }
 
 async function getHTML(address: string): Promise<string | null> {

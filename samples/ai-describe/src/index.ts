@@ -23,7 +23,7 @@ async function main() {
         }),
     });
 
-    console.log("The lowest price is:", rpai);
+    console.log("The lowest price is:", JSON.parse(rpai.response).response);
 }
 
 async function getImageAddress(

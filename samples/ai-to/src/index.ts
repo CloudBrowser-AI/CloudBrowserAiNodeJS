@@ -26,9 +26,9 @@ async function main() {
         headers: "Name,Price,Duration",
     });
 
-    console.log("JSON:", json);
-    console.log("Markdown:", markDown);
-    console.log("CSV:", csv);
+    console.log("JSON:", json.response);
+    console.log("Markdown:", markDown.response);
+    console.log("CSV:", csv.response);
 }
 
 async function getHTML(address: string): Promise<string | null> {
