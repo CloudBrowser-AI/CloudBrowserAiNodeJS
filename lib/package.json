@@ -1,6 +1,6 @@
 {
-  "name": "cloudbrowserai",
-  "version": "0.0.7",
+  "name": "cloudbrowser.ai",
+  "version": "0.0.8",
   "description": "Client for connection with CloudBrowser.AI.",
   "main": "index.js",
   "type": "module",
