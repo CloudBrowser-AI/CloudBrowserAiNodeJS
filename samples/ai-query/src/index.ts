@@ -9,23 +9,18 @@ async function main() {
 
     if (!html) return;
 
-    const ai = new AIService(cloudBrowserToken, {
-        openAIConfiguration: { apiKey: openAiToken },
-    });
+    const ai = new AIService(cloudBrowserToken, openAiToken);
 
-    // Response format can be created manually but it is easier to use a type
-    // await ai.query({
-    //     html: html,
-    //     prompt: "Give me the lowest price",
-    //     responseFormat: JSON.stringify({ response: "number", required: ["response"] })
-    // });
-
-    const rpai = await ai.query({
+    const rp = await ai.query({
         html: html,
         prompt: "Give me the lowest price",
+        responseFormat: JSON.stringify({
+            response: "number",
+            required: ["response"],
+        }),
     });
 
-    console.log("The lowest price is:", rpai);
+    console.log("The lowest price is:", JSON.parse(rp.response).response);
 }
 
 async function getHTML(address: string): Promise<string | null> {

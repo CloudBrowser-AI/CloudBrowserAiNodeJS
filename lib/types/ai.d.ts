@@ -62,7 +62,7 @@ declare interface AIResponse {
 }
 
 declare class AIService {
-    constructor(apiToken: string, defaultAIOptions?: AIOptions);
+    constructor(apiToken: string, defaultAIOptions?: AIOptions | string);
 
     get baseAddress(): string;
     set baseAddress(value: string);

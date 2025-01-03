@@ -8,18 +8,12 @@ async function main() {
         openAIConfiguration: { apiKey: openAiToken },
     });
 
-    // Response format can be created manually but it is easier to use a type
-    // await ai.optimize({
-    //     text: "FakeBrand Boa XL Max Water Pump Pliers in a Festive Christmas Ornament",
-    //     instruction: "SEO for an online store product title"
-    // });
-
     const rpai = await ai.optimize({
         text: "FakeBrand Boa XL Max Water Pump Pliers in a Festive Christmas Ornament",
         instruction: "SEO for an online store product title",
     });
 
-    console.log("Optimized title:", rpai);
+    console.log("Optimized title:", rpai.response);
 }
 
 main().catch(console.error);
