@@ -14,13 +14,17 @@ async function main() {
     const rp = await ai.query({
         html: html,
         prompt: "Give me the lowest price",
-        responseFormat: JSON.stringify({
-            response: "number",
-            required: ["response"],
-        }),
+        responseFormat: {
+            properties: {
+                response: { type: "number" },
+            },
+        },
     });
-
-    console.log("The lowest price is:", JSON.parse(rp.response).response);
+    console.log(rp);
+    if (rp.status === 200)
+        console.log("The lowest price is:", JSON.parse(rp.response).response);
+    else
+        console.log("Error: {status} {openAiError}", rp.status, rp.openAiError);
 }
 
 async function getHTML(address: string): Promise<string | null> {
@@ -48,6 +52,7 @@ async function getHTML(address: string): Promise<string | null> {
     const content = await page.content();
 
     await browser.close();
+    console.log("Browser closed");
     return content;
 }
 
