@@ -15,10 +15,11 @@ async function main() {
 
     const rp = await ai.summarize({
         html: html,
-        responseFormat: JSON.stringify({
-            response: "string",
-            required: ["response"],
-        }),
+        responseFormat: {
+            properties: {
+                response: { type: "string" },
+            },
+        },
     });
 
     console.log(JSON.parse(rp.response).response);
