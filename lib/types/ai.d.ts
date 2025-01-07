@@ -12,37 +12,37 @@ declare interface AIOptions {
 declare interface QueryRequest {
     html?: string | null;
     prompt?: string | null;
-    responseFormat?: string | null;
+    responseFormat?: object | string | null;
 }
 
 declare interface OptimizeRequest {
     text?: string | null;
     instruction?: string | null;
-    responseFormat?: string | null;
+    responseFormat?: object | string | null;
 }
 
 declare interface DescribeRequest {
     question?: string | null;
     base64Image?: string | null;
     imageUrl?: string | null;
-    responseFormat?: string | null;
+    responseFormat?: object | string | null;
 }
 
 declare interface SummarizeRequest {
     html?: string | null;
     isoLang?: string | null;
-    responseFormat?: string | null;
+    responseFormat?: object | string | null;
 }
 
 declare interface ToCSVRequest {
     html?: string | null;
     headers?: string | null;
-    responseFormat?: string | null;
+    responseFormat?: object | string | null;
 }
 
 declare interface ToJSONRequest {
     html?: string | null;
-    responseFormat?: string | null;
+    responseFormat?: object | string | null;
 }
 
 declare interface ToMarkdownRequest {
@@ -52,7 +52,7 @@ declare interface ToMarkdownRequest {
 declare interface TranslateRequest {
     text?: string | null;
     isoLang?: string | null;
-    responseFormat?: string | null;
+    responseFormat?: object | string | null;
 }
 
 declare interface AIResponse {
