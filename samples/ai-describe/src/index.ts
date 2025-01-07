@@ -17,10 +17,11 @@ async function main() {
         // base64Image: downloadImage(src), // You can send bytes instead of the image URL
         imageUrl: src,
         question: "Is the image red?",
-        responseFormat: JSON.stringify({
-            response: "bool",
-            required: ["response"],
-        }),
+        responseFormat: {
+            properties: {
+                response: { type: "boolean" },
+            },
+        },
     });
 
     console.log("The lowest price is:", JSON.parse(rpai.response).response);
